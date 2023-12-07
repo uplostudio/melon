@@ -53,7 +53,7 @@ export default function List({ user, tab }) {
                             <th>Nazwa</th>
                             <th>Ilość</th>
                             <th>Magazyn</th>
-                            <th>Lokalizacja</th>
+                            <th>Sekcja</th>
                         </tr>
                     </thead>
                     {rows.toReversed().map((row) => (
