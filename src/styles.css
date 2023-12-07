@@ -11,6 +11,7 @@ button {
   background: #18a974;
   border: none;
   color: #fff;
+  border-radius: 4px;
 }
 
 input, select {
