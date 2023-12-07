@@ -7,13 +7,15 @@
   color: #000;
 }
 
-button {
+button, .btn {
   font-size: 16px;
   padding: 12px 24px;
   background: #18a974;
   border: none;
   color: #fff;
   border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
 }
 
 input, select {

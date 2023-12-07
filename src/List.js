@@ -1,5 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
+import { CSVLink } from "react-csv";
+
 
 const supabase = createClient(
     "https://agnyesdxzgsszjbvwekd.supabase.co",
@@ -66,8 +68,9 @@ export default function List({ user, tab }) {
                     </tr>
                 ))}
             </table>
-
-            {/* <button id="btnExport">Export CSV</button> */}
+            <div style={{ height: "24px" }}></div>
+            <CSVLink filename={"lista-towarow-" + user.replaceAll(" ", "-").toLowerCase() + ".csv"}
+                className="btn" data={rows}>Pobierz CSV</CSVLink>
         </div>
     );
 }
