@@ -40,34 +40,36 @@ export default function List({ user, tab }) {
             </div>
 
             <div style={{ height: "24px" }}></div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nazwa</th>
-                        <th>Ilość</th>
-                        <th>Magazyn</th>
-                        <th>Lokalizacja</th>
-                    </tr>
-                </thead>
-                {rows.toReversed().map((row) => (
-                    <tr key={row.id}>
-                        <td>
-                            {row.product_id}{" "}
-                            <span
-                                style={{ cursor: "pointer", fontSize: "10px" }}
-                                onClick={() => deleteRow(row.id)}
-                            >
-                                (Usuń)
-                            </span>
-                        </td>
-                        <td>{row.product_name}</td>
-                        <td>{row.amount}</td>
-                        <td>{row.magazine}</td>
-                        <td>{row.location} </td>
-                    </tr>
-                ))}
-            </table>
+            <div style={{ overflow: "scroll" }}>
+                <table style={{ minWidth: "600px" }}>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nazwa</th>
+                            <th>Ilość</th>
+                            <th>Magazyn</th>
+                            <th>Lokalizacja</th>
+                        </tr>
+                    </thead>
+                    {rows.toReversed().map((row) => (
+                        <tr key={row.id}>
+                            <td>
+                                {row.product_id}{" "}
+                                <span
+                                    style={{ cursor: "pointer", fontSize: "10px" }}
+                                    onClick={() => deleteRow(row.id)}
+                                >
+                                    (Usuń)
+                                </span>
+                            </td>
+                            <td>{row.product_name}</td>
+                            <td>{row.amount}</td>
+                            <td>{row.magazine}</td>
+                            <td>{row.location} </td>
+                        </tr>
+                    ))}
+                </table>
+            </div>
             <div style={{ height: "24px" }}></div>
             <CSVLink filename={"lista-towarow-" + user.replaceAll(" ", "-").toLowerCase() + ".csv"}
                 className="btn" data={rows}>Pobierz CSV</CSVLink>
