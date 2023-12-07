@@ -54,6 +54,7 @@ export default function List({ user, tab }) {
                             <th>Ilość</th>
                             <th>Magazyn</th>
                             <th>Sekcja</th>
+                            <th>Użytkownik</th>
                         </tr>
                     </thead>
                     {rows.toReversed().map((row) => (
@@ -71,6 +72,7 @@ export default function List({ user, tab }) {
                             <td>{row.amount}</td>
                             <td>{row.magazine}</td>
                             <td>{row.location} </td>
+                            <td>{row.user} </td>
                         </tr>
                     ))}
                 </table>
