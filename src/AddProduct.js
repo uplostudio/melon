@@ -247,7 +247,7 @@ export default function AddProduct() {
                 <div style={{ height: "24px" }}></div>
 
                 <div className="label">Ilość</div>
-                <input type="number" ref={amountRef} />
+                <input type="number" step="any" ref={amountRef} />
                 <div style={{ height: "24px" }}></div>
 
                 <button>Dodaj</button>
