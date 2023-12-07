@@ -10,7 +10,7 @@
 button, .btn {
   font-size: 16px;
   padding: 12px 24px;
-  background: #18a974;
+  background: #3d37da;
   border: none;
   color: #fff;
   border-radius: 4px;
@@ -38,12 +38,12 @@ input, select {
   display: inline-block;
   margin-right: 10px;
   padding: 10px;
-  border: 1px solid #18a974;
+  border: 1px solid #c2c2c2;
   cursor: pointer;
 }
 
 .tab.is-active {
-  background: #18a974;
+  background: #3d37da;
   color: #fff;
 }
 
@@ -75,6 +75,6 @@ th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #18a974;
+  background-color: #3d37da;
   color: white;
 }
