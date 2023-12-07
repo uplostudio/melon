@@ -14,13 +14,11 @@ export default function List({ user, tab }) {
             .from("Rows")
             .select("*")
             .eq("user", user);
-        console.log(user);
-        setRows(Rows);
-        console.log(Rows);
+        setRows(Rows.filter((row) => row.isDeleted !== true));
     }
 
     async function deleteRow(id) {
-        const { error } = await supabase.from("Rows").delete().eq("id", id);
+        const { error } = await supabase.from("Rows").update({ isDeleted: true }).eq("id", id);
         getRows();
     }
 
