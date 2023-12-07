@@ -28,6 +28,7 @@ input, select {
 }
 
 .tab {
+  border-radius: 4px;
   display: inline-block;
   margin-right: 10px;
   padding: 10px;
