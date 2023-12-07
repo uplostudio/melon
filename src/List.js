@@ -35,11 +35,16 @@ export default function List({ user, tab }) {
     return (
         <div>
             <h1>Lista towarów</h1>
-            <div onClick={getRows} style={{ cursor: "pointer" }}>
-                Odśwież
-            </div>
 
-            <div style={{ height: "24px" }}></div>
+            <CSVLink filename={"lista-towarow-" + user.replaceAll(" ", "-").toLowerCase() + ".csv"}
+                className="btn" data={rows}>Pobierz CSV</CSVLink>
+
+
+
+
+            <div style={{ height: "12px" }}></div>
+            {user === "" ? <div>Wybierz użytkownika</div> : null}
+            <div style={{ height: "12px" }}></div>
             <div style={{ overflow: "scroll" }}>
                 <table style={{ minWidth: "600px" }}>
                     <thead>
@@ -71,8 +76,7 @@ export default function List({ user, tab }) {
                 </table>
             </div>
             <div style={{ height: "24px" }}></div>
-            <CSVLink filename={"lista-towarow-" + user.replaceAll(" ", "-").toLowerCase() + ".csv"}
-                className="btn" data={rows}>Pobierz CSV</CSVLink>
+
         </div>
     );
 }
