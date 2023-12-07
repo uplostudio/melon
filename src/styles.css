@@ -1,0 +1,72 @@
+.App {
+  font-family: Inter, Helvetica, sans-serif;
+  font-family: sans-serif;
+  text-align: left;
+  color: #000;
+}
+
+button {
+  font-size: 16px;
+  padding: 12px 24px;
+  background: #18a974;
+  border: none;
+  color: #fff;
+}
+
+input, select {
+  color: #000;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.label {
+  margin-bottom: 4px;
+}
+
+.tab {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #18a974;
+  cursor: pointer;
+}
+
+.tab.is-active {
+  background: #18a974;
+  color: #fff;
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+table {
+  font-size: 12px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #18a974;
+  color: white;
+}
