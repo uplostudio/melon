@@ -5,6 +5,7 @@
   font-family: sans-serif;
   text-align: left;
   color: #000;
+  max-width: 700px;
 }
 
 button, .btn {
