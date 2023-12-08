@@ -13,6 +13,7 @@ export default function List({ user, tab }) {
         let { data: Rows, error } = await supabase
             .from("Rows")
             .select("*")
+            .order("created_at", { ascending: false })
             .eq("user", user);
         setRows(Rows.filter((row) => row.isDeleted !== true));
     }
@@ -54,9 +55,10 @@ export default function List({ user, tab }) {
                             <th>Magazyn</th>
                             <th>Sekcja</th>
                             <th>Użytkownik</th>
+                            <th>Czas</th>
                         </tr>
                     </thead>
-                    {rows.toReversed().map((row) => (
+                    {rows.map((row) => (
                         <tr key={row.id}>
                             <td>
                                 {row.product_id}{" "}
@@ -71,7 +73,8 @@ export default function List({ user, tab }) {
                             <td>{row.amount}</td>
                             <td>{row.magazine}</td>
                             <td>{row.location} </td>
-                            <td>{row.user} </td>
+                            <td>{row.user}</td>
+                            <td>{row.created_at}</td>
                         </tr>
                     ))}
                 </table>
