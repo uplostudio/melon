@@ -253,7 +253,7 @@ export default function AddProduct() {
                     <span className="label">Ilość</span>
                     <input type="number" step="any" ref={amountRef} />
                 </div>
-                <div style={{ height: "24px" }}></div>
+                <div style={{ height: "8px" }}></div>
 
                 <button onClick={insertRow}>Dodaj</button>
             </div>
