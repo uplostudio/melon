@@ -53,7 +53,7 @@ export default function AddProduct() {
     const locationRef = useRef();
 
     return (
-        <form onSubmit={insertRow}>
+        <div>
 
             <div className={"tab" + (tab === 1 ? " is-active" : "")} onClick={() => setTab(1)}>Dane</div>
             <div className={"tab" + (tab === 2 ? " is-active" : "")} onClick={() => setTab(2)}>Skanuj produkt</div>
@@ -250,7 +250,7 @@ export default function AddProduct() {
                 <input type="number" step="any" ref={amountRef} />
                 <div style={{ height: "24px" }}></div>
 
-                <button>Dodaj</button>
+                <button onClick={insertRow}>Dodaj</button>
             </div>
 
             <div className={"tab-panel" + (tab === 3 ? " is-active" : "")}>
@@ -258,6 +258,6 @@ export default function AddProduct() {
             </div>
 
 
-        </form>
+        </div>
     );
 }
