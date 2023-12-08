@@ -14,8 +14,18 @@ export default function List({ user, tab }) {
             .from("Rows")
             .select("*")
             .order("created_at", { ascending: false })
-            .eq("user", user);
+            .eq("user", user)
+            .limit(5000);
         setRows(Rows.filter((row) => row.isDeleted !== true));
+        getAllRows();
+    }
+
+    async function getAllRows() {
+        let { data: Rows, error } = await supabase
+            .from("Rows")
+            .select("*")
+            .order("created_at", { ascending: false });
+        setAllRows(Rows.filter((row) => row.isDeleted !== true));
     }
 
     async function deleteRow(id) {
@@ -24,6 +34,7 @@ export default function List({ user, tab }) {
     }
 
     const [rows, setRows] = useState([]);
+    const [allRows, setAllRows] = useState([]);
 
     useEffect(() => {
         if (tab === 3) {
@@ -35,8 +46,8 @@ export default function List({ user, tab }) {
         <div>
             <h1>Lista towarów</h1>
 
-            <CSVLink filename={"lista-towarow-" + user.replaceAll(" ", "-").toLowerCase() + ".csv"}
-                className="btn" data={rows}>Pobierz CSV</CSVLink>
+            <CSVLink filename={"lista-towarow.csv"}
+                className="btn" data={allRows}>Pobierz CSV</CSVLink>
 
 
 
