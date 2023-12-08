@@ -240,11 +240,11 @@ export default function AddProduct() {
 
 
             <div className={"tab-panel" + (tab === 2 ? " is-active" : "")}>
-                <h1 onClick={getProduct}>Skanuj produkt</h1>
+
                 <div className="label">Produkt</div>
                 <input onKeyDown={(e) => { e.target.keyCode === 13 && e.preventDefault(); }} ref={productIdRef} onChange={getProduct} />
                 <p>{productName}</p>
-                <div style={{ height: "24px" }}></div>
+                <div style={{ height: "12px" }}></div>
 
                 <div className="label">Ilość</div>
                 <input type="number" step="any" ref={amountRef} />
