@@ -251,7 +251,7 @@ export default function AddProduct() {
 
                 <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                     <span className="label">Ilość</span>
-                    <input type="number" step="any" ref={amountRef} />
+                    <input type="number" step="any" ref={amountRef} onChange={getProduct} />
                 </div>
                 <div style={{ height: "8px" }}></div>
 
