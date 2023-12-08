@@ -13,7 +13,7 @@ export default function AddProduct() {
     async function insertRow(event) {
         event.preventDefault();
 
-        if (amountRef.current.value !== "") {
+        if (amountRef.current.value !== "" && productIdRef.current.value !== "") {
             await getProduct();
             const { data, error } = await supabase
                 .from("Rows")
