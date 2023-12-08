@@ -241,13 +241,18 @@ export default function AddProduct() {
 
             <div className={"tab-panel" + (tab === 2 ? " is-active" : "")}>
 
-                <div className="label">Produkt</div>
-                <input onKeyDown={(e) => { e.target.keyCode === 13 && e.preventDefault(); }} ref={productIdRef} onChange={getProduct} />
+                <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                    <span className="label">Produkt</span>
+                    <input onKeyDown={(e) => { e.target.keyCode === 13 && e.preventDefault(); }} ref={productIdRef} onChange={getProduct} />
+                </div>
+                <div style={{ height: "6px" }}></div>
                 <div>{productName}</div>
-                <div style={{ height: "12px" }}></div>
+                <div style={{ height: "6px" }}></div>
 
-                <div className="label">Ilość</div>
-                <input type="number" step="any" ref={amountRef} />
+                <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+                    <span className="label">Ilość</span>
+                    <input type="number" step="any" ref={amountRef} />
+                </div>
                 <div style={{ height: "24px" }}></div>
 
                 <button onClick={insertRow}>Dodaj</button>
