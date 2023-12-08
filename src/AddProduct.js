@@ -243,7 +243,7 @@ export default function AddProduct() {
 
                 <div className="label">Produkt</div>
                 <input onKeyDown={(e) => { e.target.keyCode === 13 && e.preventDefault(); }} ref={productIdRef} onChange={getProduct} />
-                <p>{productName}</p>
+                <div>{productName}</div>
                 <div style={{ height: "12px" }}></div>
 
                 <div className="label">Ilość</div>
