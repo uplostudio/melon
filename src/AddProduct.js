@@ -12,24 +12,27 @@ const supabase = createClient(
 export default function AddProduct() {
     async function insertRow(event) {
         event.preventDefault();
-        await getProduct();
-        const { data, error } = await supabase
-            .from("Rows")
-            .insert([
-                {
-                    user: userRef.current.value,
-                    magazine: magazineRef.current.value,
-                    location: locationRef.current.value,
-                    product_id: productIdRef.current.value,
-                    product_name: productName,
-                    amount: amountRef.current.value,
-                },
-            ])
-            .select();
-        productIdRef.current.value = "";
-        amountRef.current.value = "";
-        productIdRef.current.focus();
-        setProductName("");
+
+        if (amountRef.current.value !== "") {
+            await getProduct();
+            const { data, error } = await supabase
+                .from("Rows")
+                .insert([
+                    {
+                        user: userRef.current.value,
+                        magazine: magazineRef.current.value,
+                        location: locationRef.current.value,
+                        product_id: productIdRef.current.value,
+                        product_name: productName,
+                        amount: amountRef.current.value,
+                    },
+                ])
+                .select();
+            productIdRef.current.value = "";
+            amountRef.current.value = "";
+            productIdRef.current.focus();
+            setProductName("");
+        }
     }
 
     async function getProduct() {
