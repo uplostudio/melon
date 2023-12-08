@@ -40,8 +40,18 @@ export default function AddProduct() {
             .from("Items")
             .select("*")
             .eq("product_id", productIdRef.current.value);
+        setProductName(Items?.[0]?.name);
+
+    }
+
+    async function getProductAndNumber() {
+        let { data: Items, error } = await supabase
+            .from("Items")
+            .select("*")
+            .eq("product_id", productIdRef.current.value);
 
         setProductName(Items?.[0]?.name);
+
         if (!isNaN(Items?.[0]?.amount) && productIdRef.current.value.charAt(0) === "2") {
             amountRef.current.value = Items?.[0]?.amount;
         }
@@ -248,7 +258,7 @@ export default function AddProduct() {
 
                 <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
                     <span className="label">Produkt</span>
-                    <input onKeyDown={(e) => { e.target.keyCode === 13 && e.preventDefault(); }} ref={productIdRef} onChange={getProduct} />
+                    <input onKeyDown={(e) => { e.target.keyCode === 13 && e.preventDefault(); }} ref={productIdRef} onChange={getProductAndNumber} />
                 </div>
                 <div style={{ height: "6px" }}></div>
                 <div>{productName}</div>
