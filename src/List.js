@@ -41,6 +41,7 @@ export default function List({ user, tab }) {
 
 
             <div style={{ height: "12px" }}></div>
+            <div style={{ cursor: "pointer" }} onClick={getRows}>Odświez</div>
             {user === "" ? <div>Wybierz użytkownika</div> : null}
             <div style={{ height: "12px" }}></div>
             <div style={{ overflow: "scroll" }}>
