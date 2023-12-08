@@ -12,7 +12,7 @@ const supabase = createClient(
 export default function AddProduct() {
     async function insertRow(event) {
         event.preventDefault();
-        getProduct();
+        await getProduct();
         const { data, error } = await supabase
             .from("Rows")
             .insert([
