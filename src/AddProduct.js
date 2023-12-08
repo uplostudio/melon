@@ -37,7 +37,7 @@ export default function AddProduct() {
             .select("*")
             .eq("product_id", productIdRef.current.value);
         setProductName(Items?.[0]?.name);
-        if (!isNaN(Items?.[0]?.amount)) {
+        if (!isNaN(Items?.[0]?.amount) && productIdRef.current.value.charAt(0) === "2") {
             amountRef.current.value = Items?.[0]?.amount;
         }
     }
