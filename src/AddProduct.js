@@ -249,6 +249,18 @@ export default function AddProduct() {
                     <option>117 - Gwoździe, Pręty, Tynki, Farby</option>
                     <option>118 - Narożniki</option>
                     <option>119 - Drzwi, Folie, Drabiny, Podkłady</option>
+                    <option>120 - Nidzica, dodatkowy 1</option>
+                    <option>121 - Nidzica, dodatkowy 2</option>
+                    <option>122 - Nidzica, dodatkowy 3</option>
+                    <option>123 - Nidzica, dodatkowy 4</option>
+                    <option>124 - Nidzica, dodatkowy 5</option>
+                    <option>125 - Nidzica, dodatkowy 6</option>
+
+
+
+
+
+
                 </select>
                 <div style={{ height: "24px" }}></div>
             </div>
