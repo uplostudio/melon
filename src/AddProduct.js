@@ -255,12 +255,6 @@ export default function AddProduct() {
                     <option>123 - Nidzica, dodatkowy 4</option>
                     <option>124 - Nidzica, dodatkowy 5</option>
                     <option>125 - Nidzica, dodatkowy 6</option>
-
-
-
-
-
-
                 </select>
                 <div style={{ height: "24px" }}></div>
             </div>
