@@ -28,6 +28,7 @@ export default function AddProduct() {
                         location: locationRef.current.value,
                         product_id: productIdRef.current.value,
                         product_name: productName,
+                        idtw: idtw,
                         amount: amountRef.current.value,
                     },
                 ])
@@ -45,7 +46,7 @@ export default function AddProduct() {
             .select("*")
             .eq("product_id", productIdRef.current.value);
         setProductName(Items?.[0]?.name);
-
+        setIdtw(Items?.[0]?.idtw)
     }
 
     async function getProductAndNumber() {
@@ -55,6 +56,7 @@ export default function AddProduct() {
             .eq("product_id", productIdRef.current.value);
 
         setProductName(Items?.[0]?.name);
+        setIdtw(Items?.[0]?.idtw)
 
         if (!isNaN(Items?.[0]?.amount) && productIdRef.current.value.charAt(0) === "2") {
             amountRef.current.value = Items?.[0]?.amount;
@@ -62,6 +64,7 @@ export default function AddProduct() {
     }
 
     const [productName, setProductName] = useState("");
+    const [idtw, setIdtw] = useState("");
     const [user, setUser] = useState(usersList[0]);
     const [tab, setTab] = useState(1);
 

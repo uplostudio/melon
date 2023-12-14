@@ -8,7 +8,7 @@ export default function Auth({ setIsAuth }) {
 
     function checkPass(event) {
         event.preventDefault();
-        if (passRef.current.value === "ite") {
+        if (passRef.current.value === "1234") {
             setIsAuth(true);
         } else {
             setError("Błędne hasło");

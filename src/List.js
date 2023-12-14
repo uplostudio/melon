@@ -62,6 +62,7 @@ export default function List({ user, tab }) {
                         <tr>
                             <th>ID</th>
                             <th>Nazwa</th>
+                            <th>idtw</th>
                             <th>Ilość</th>
                             <th>Magazyn</th>
                             <th>Sekcja</th>
@@ -81,6 +82,7 @@ export default function List({ user, tab }) {
                                 </span>
                             </td>
                             <td>{row.product_name}</td>
+                            <td>{row.idtw}</td>
                             <td>{row.amount}</td>
                             <td>{row.magazine}</td>
                             <td>{row.location} </td>
