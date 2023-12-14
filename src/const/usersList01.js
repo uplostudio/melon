@@ -1,0 +1,22 @@
+export const usersList =
+    [
+        "Roman Lewandowski",
+        "Marek Słodkowski",
+        "Bartłomiej Karólski",
+        "Jacek Zieliński",
+        "Sebastian Kopczyński",
+        "Dawid Krzykowski",
+        "Anna Kremska",
+        "Małgorzata Idźkowska",
+        "Danuta Duchna",
+        "Anna Kozicka",
+        "Kamil Pepłowski",
+        "Jacek Duchna",
+        "Igor Stypik",
+        "Beata Batyra",
+        "Marek Micigolski",
+        "Mariusz Hohmann",
+        "Iwona Gajocha",
+        "Marcin Szwed",
+        "Jakub Samojluk",
+    ]
