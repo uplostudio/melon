@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import { createClient } from "@supabase/supabase-js";
 
 import { usersList } from "./const/usersList02";
-import { magazinesList } from "./const/magazinesList01";
+import { magazinesList } from "./const/magazinesList02";
 import { locationsList } from "./const/locationsList02";
 
 import List from "./List";
