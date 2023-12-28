@@ -26,4 +26,4 @@ export const magazinesList =
         "M09 OSTRÓDA SKLEP",
         "M10 OSTRÓDA DODATKOWY",
         "MROS OSTRÓDA MAGAZYN REKLAMACYJNY"
-    ]
+    ];

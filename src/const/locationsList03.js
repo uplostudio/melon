@@ -130,5 +130,3 @@ export const locationsList = [
     "129. Zapas 2",
     "130. Zapas 3"
 ];
-
-];
