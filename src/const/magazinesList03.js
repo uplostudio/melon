@@ -1,0 +1,6 @@
+export const magazinesList =
+    [
+        "M08 - LIDZBARK WARMIŃSKI SKLEP",
+        "M88 - LIDZBARK MAGAZYN MATERIAŁÓW BUDOWLANYCH",
+        "MRLW - LIDZBARK WARMIŃSK MAGAZYN REKLAMACYJNY"
+    ]
