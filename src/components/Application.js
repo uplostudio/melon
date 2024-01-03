@@ -2,10 +2,6 @@ import "../styles.css";
 import { useState, useRef, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 
-import { usersList } from "../const/usersList03";
-import { magazinesList } from "../const/magazinesList03";
-import { locationsList } from "../const/locationsList03";
-
 import List from "./List";
 
 const supabase = createClient(

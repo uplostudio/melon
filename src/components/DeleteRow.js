@@ -20,7 +20,7 @@ export default function DeleteRow({ deleteRow, row }) {
                 + (isModalOpen ? " is-active" : "")
             }>
                 <div className="delete-modal_wrapper">
-                    <p>Czy chcesz usunąć ten wiersz?</p>
+                    <p>Czy na pewno chcesz usunąć odczytany towar: {row.product_name}</p>
                     <div style={{ height: "12px" }}></div>
                     <div style={{ display: "flex", gap: "12px" }}>
                         <div

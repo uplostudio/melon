@@ -104,6 +104,7 @@ th {
 .delete-modal_wrapper {
   background-color: #fff;
   padding: 24px;
+  max-width: 260px;
 }
 
 .delete-modal_button {
