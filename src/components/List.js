@@ -1,6 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 import { CSVLink } from "react-csv";
+import DeleteRow from "./DeleteRow";
 
 
 const supabase = createClient(
@@ -70,26 +71,23 @@ export default function List({ user, tab }) {
                             <th>Czas</th>
                         </tr>
                     </thead>
-                    {rows.map((row) => (
-                        <tr key={row.id}>
-                            <td>
-                                {row.product_id}{" "}
-                                <span
-                                    style={{ cursor: "pointer", fontSize: "10px" }}
-                                    onClick={() => deleteRow(row.id)}
-                                >
-                                    (Usuń)
-                                </span>
-                            </td>
-                            <td>{row.product_name}</td>
-                            <td>{row.idtw}</td>
-                            <td>{row.amount}</td>
-                            <td>{row.magazine}</td>
-                            <td>{row.location} </td>
-                            <td>{row.user}</td>
-                            <td>{row.created_at}</td>
-                        </tr>
-                    ))}
+                    <tbody>
+                        {rows.map((row) => (
+                            <tr key={row.id}>
+                                <td>
+                                    {row.product_id}
+                                    <DeleteRow deleteRow={deleteRow} row={row} />
+                                </td>
+                                <td>{row.product_name}</td>
+                                <td>{row.idtw}</td>
+                                <td>{row.amount}</td>
+                                <td>{row.magazine}</td>
+                                <td>{row.location} </td>
+                                <td>{row.user}</td>
+                                <td>{row.created_at}</td>
+                            </tr>
+                        ))}
+                    </tbody>
                 </table>
             </div>
             <div style={{ height: "24px" }}></div>

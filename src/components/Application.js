@@ -1,10 +1,10 @@
-import "./styles.css";
-import { useState, useRef } from "react";
+import "../styles.css";
+import { useState, useRef, useEffect } from "react";
 import { createClient } from "@supabase/supabase-js";
 
-import { usersList } from "./const/usersList03";
-import { magazinesList } from "./const/magazinesList03";
-import { locationsList } from "./const/locationsList03";
+import { usersList } from "../const/usersList03";
+import { magazinesList } from "../const/magazinesList03";
+import { locationsList } from "../const/locationsList03";
 
 import List from "./List";
 
@@ -13,7 +13,7 @@ const supabase = createClient(
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnbnllc2R4emdzc3pqYnZ3ZWtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDE5NTY1NTIsImV4cCI6MjAxNzUzMjU1Mn0.EB8MdBUJcRbnLLE5TnOhsVbHQD3FHPnE3a-DlDG9jhw"
 );
 
-export default function AddProduct() {
+export default function Application() {
     async function insertRow(event) {
         event.preventDefault();
 
@@ -40,6 +40,29 @@ export default function AddProduct() {
         }
     }
 
+    async function getUsers() {
+        let { data: Users, error } = await supabase
+            .from("Users")
+            .select("*");
+        setUsers(Users);
+        setUser(Users?.[0]?.name);
+    }
+
+    async function getLocations() {
+        let { data: Locations, error } = await supabase
+            .from("Locations")
+            .select("*");
+        setLocations(Locations);
+    }
+
+    async function getMagazines() {
+        let { data: Magazines, error } = await supabase
+            .from("Magazines")
+            .select("*");
+        setMagazines(Magazines);
+    }
+
+
     async function getProduct() {
         let { data: Items, error } = await supabase
             .from("Items")
@@ -63,9 +86,12 @@ export default function AddProduct() {
         }
     }
 
+    const [users, setUsers] = useState([]);
+    const [locations, setLocations] = useState([]);
+    const [magazines, setMagazines] = useState([]);
     const [productName, setProductName] = useState("");
     const [idtw, setIdtw] = useState("");
-    const [user, setUser] = useState(usersList[0]);
+    const [user, setUser] = useState("");
     const [tab, setTab] = useState(1);
 
     const userRef = useRef();
@@ -73,6 +99,13 @@ export default function AddProduct() {
     const productIdRef = useRef();
     const amountRef = useRef();
     const locationRef = useRef();
+
+    useEffect(() => {
+        getUsers();
+        getLocations();
+        getMagazines();
+    }, []);
+
 
     return (
         <div>
@@ -85,16 +118,16 @@ export default function AddProduct() {
                 <h1 onClick={getProduct}>Dane</h1>
                 <div className="label">Użytkownik</div>
                 <select ref={userRef} onChange={() => setUser(userRef.current.value)}>
-                    {usersList.map((user) => (
-                        <option key={user}>{user}</option>
+                    {users.map((user) => (
+                        <option key={user.id}>{user.name}</option>
                     ))}
                 </select>
                 <div style={{ height: "24px" }}></div>
 
                 <div className="label">Magazyn</div>
                 <select ref={magazineRef}>
-                    {magazinesList.map((magazine) => (
-                        <option key={magazine}>{magazine}</option>
+                    {magazines.map((magazine) => (
+                        <option key={magazine.id}>{magazine.name}</option>
                     ))}
                 </select>
                 <div style={{ height: "24px" }}></div>
@@ -103,8 +136,8 @@ export default function AddProduct() {
 
 
                 <select ref={locationRef}>
-                    {locationsList.map((location) => (
-                        <option key={location}>{location}</option>
+                    {locations.map((location) => (
+                        <option key={location.id}>{location.name}</option>
                     ))}
                 </select>
 

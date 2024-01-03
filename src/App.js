@@ -1,16 +1,14 @@
 import { useState } from "react";
-import AddProduct from "./AddProduct";
-import Auth from "./Auth";
+import Application from "./components/Application";
+import Auth from "./components/Auth";
 import "./styles.css";
-import Logo from "./jasam.svg";
 
 export default function App() {
   const [isAuth, setIsAuth] = useState(false);
 
   return (
     <div className="App">
-      {/* <img src={Logo} /> */}
-      {isAuth ? <AddProduct /> : <Auth setIsAuth={setIsAuth} />}
+      {isAuth ? <Application /> : <Auth setIsAuth={setIsAuth} />}
     </div>
   );
 }

@@ -84,3 +84,35 @@ th {
   background-color: #3d37da;
   color: white;
 }
+
+.delete-modal {
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-modal.is-active {
+  display: flex;
+}
+
+.delete-modal_wrapper {
+  background-color: #fff;
+  padding: 24px;
+}
+
+.delete-modal_button {
+  padding: 12px 24px;
+  background: #3d37da;
+  color: #fff;
+}
+
+.delete-modal_button.is-cancel {
+  background: #ddd;
+  color: #000;
+}
