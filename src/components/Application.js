@@ -39,7 +39,8 @@ export default function Application() {
     async function getUsers() {
         let { data: Users, error } = await supabase
             .from("Users")
-            .select("*");
+            .select("*")
+            .order('id', { ascending: true });
         setUsers(Users);
         setUser(Users?.[0]?.name);
     }
@@ -47,14 +48,16 @@ export default function Application() {
     async function getLocations() {
         let { data: Locations, error } = await supabase
             .from("Locations")
-            .select("*");
+            .select("*")
+            .order('id', { ascending: true });
         setLocations(Locations);
     }
 
     async function getMagazines() {
         let { data: Magazines, error } = await supabase
             .from("Magazines")
-            .select("*");
+            .select("*")
+            .order('id', { ascending: true });
         setMagazines(Magazines);
     }
 
@@ -69,10 +72,13 @@ export default function Application() {
     }
 
     async function getProductAndNumber() {
+
         let { data: Items, error } = await supabase
             .from("Items")
             .select("*")
             .eq("product_id", productIdRef.current.value);
+
+
 
         setProductName(Items?.[0]?.name);
         setIdtw(Items?.[0]?.idtw)
