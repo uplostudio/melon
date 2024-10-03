@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { CSVLink } from "react-csv";
 import DeleteRow from "./DeleteRow";
 
-
+// supabe client
 const supabase = createClient(
     "https://agnyesdxzgsszjbvwekd.supabase.co",
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnbnllc2R4emdzc3pqYnZ3ZWtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDE5NTY1NTIsImV4cCI6MjAxNzUzMjU1Mn0.EB8MdBUJcRbnLLE5TnOhsVbHQD3FHPnE3a-DlDG9jhw"
