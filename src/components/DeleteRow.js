@@ -9,12 +9,12 @@ export default function DeleteRow({ deleteRow, row }) {
     }
     return (
         <div>
-            <span
+            {/* <span
                 style={{ cursor: "pointer", fontSize: "10px" }}
                 onClick={() => setIsModalOpen(true)}
             >
                 (Usuń)
-            </span>
+            </span> */}
 
             <div className={"delete-modal"
                 + (isModalOpen ? " is-active" : "")

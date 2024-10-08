@@ -5,8 +5,8 @@ import DeleteRow from "./DeleteRow";
 
 // supabe client
 const supabase = createClient(
-    "https://agnyesdxzgsszjbvwekd.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnbnllc2R4emdzc3pqYnZ3ZWtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDE5NTY1NTIsImV4cCI6MjAxNzUzMjU1Mn0.EB8MdBUJcRbnLLE5TnOhsVbHQD3FHPnE3a-DlDG9jhw"
+    "https://dupkrmkaqmpozhleqush.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1cGtybWthcW1wb3pobGVxdXNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgzNzEwMzksImV4cCI6MjA0Mzk0NzAzOX0.gRUV1UDv0mfx8CPZXc3C0YKRZho3qMw1R-AjXJnP9oY"
 );
 
 export default function List({ user, tab }) {
@@ -24,7 +24,7 @@ export default function List({ user, tab }) {
     async function getAllRows() {
         let { data: Rows, error } = await supabase
             .from("Rows")
-            .select("*")
+            .select("product_id, product_name, amount, user, created_at, amount_expected")
             .order("created_at", { ascending: false });
         setAllRows(Rows.filter((row) => row.isDeleted !== true));
     }
@@ -63,10 +63,11 @@ export default function List({ user, tab }) {
                         <tr>
                             <th>ID</th>
                             <th>Nazwa</th>
-                            <th>idtw</th>
+                            {/* <th>idtw</th> */}
                             <th>Ilość</th>
-                            <th>Magazyn</th>
-                            <th>Sekcja</th>
+                            <th>Stan</th>
+                            {/* <th>Magazyn</th>
+                            <th>Sekcja</th> */}
                             <th>Użytkownik</th>
                             <th>Czas</th>
                         </tr>
@@ -79,10 +80,11 @@ export default function List({ user, tab }) {
                                     <DeleteRow deleteRow={deleteRow} row={row} />
                                 </td>
                                 <td>{row.product_name}</td>
-                                <td>{row.idtw}</td>
+                                {/* <td>{row.idtw}</td> */}
                                 <td>{row.amount}</td>
-                                <td>{row.magazine}</td>
-                                <td>{row.location} </td>
+                                <td>{row.amount_expected}</td>
+                                {/* <td>{row.magazine}</td>
+                                <td>{row.location} </td> */}
                                 <td>{row.user}</td>
                                 <td>{row.created_at}</td>
                             </tr>

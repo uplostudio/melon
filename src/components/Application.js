@@ -5,8 +5,8 @@ import { createClient } from "@supabase/supabase-js";
 import List from "./List";
 
 const supabase = createClient(
-    "https://agnyesdxzgsszjbvwekd.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnbnllc2R4emdzc3pqYnZ3ZWtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDE5NTY1NTIsImV4cCI6MjAxNzUzMjU1Mn0.EB8MdBUJcRbnLLE5TnOhsVbHQD3FHPnE3a-DlDG9jhw"
+    "https://dupkrmkaqmpozhleqush.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1cGtybWthcW1wb3pobGVxdXNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjgzNzEwMzksImV4cCI6MjA0Mzk0NzAzOX0.gRUV1UDv0mfx8CPZXc3C0YKRZho3qMw1R-AjXJnP9oY"
 );
 
 export default function Application() {
@@ -20,12 +20,10 @@ export default function Application() {
                 .insert([
                     {
                         user: userRef.current.value,
-                        magazine: magazineRef.current.value,
-                        location: locationRef.current.value,
                         product_id: productIdRef.current.value,
                         product_name: productName,
-                        idtw: idtw,
                         amount: amountRef.current.value,
+                        amount_expected: amountExpected,
                     },
                 ])
                 .select();
@@ -78,13 +76,16 @@ export default function Application() {
             .select("*")
             .eq("product_id", productIdRef.current.value);
 
+        console.log(Items);
+
 
 
         setProductName(Items?.[0]?.name);
-        setIdtw(Items?.[0]?.idtw)
+        // setIdtw(Items?.[0]?.idtw)
 
-        if (!isNaN(Items?.[0]?.amount) && productIdRef.current.value.charAt(0) === "2") {
+        if (!isNaN(Items?.[0]?.amount)) {
             amountRef.current.value = Items?.[0]?.amount;
+            setAmountExpected(Items?.[0]?.amount)
         }
     }
 
@@ -95,6 +96,7 @@ export default function Application() {
     const [idtw, setIdtw] = useState("");
     const [user, setUser] = useState("");
     const [tab, setTab] = useState(1);
+    const [amountExpected, setAmountExpected] = useState("");
 
     const userRef = useRef();
     const magazineRef = useRef();
