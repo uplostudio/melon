@@ -5,7 +5,7 @@ import "./styles.css";
 
 export default function App() {
   const [isAuth, setIsAuth] = useState(false);
-
+//
   return (
     <div className="App">
       {isAuth ? <Application /> : <Auth setIsAuth={setIsAuth} />}
