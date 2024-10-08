@@ -126,7 +126,7 @@ export default function Application() {
                 </select>
                 <div style={{ height: "24px" }}></div>
 
-                <div className="label">Magazyn</div>
+                {/* <div className="label">Magazyn</div>
                 <select ref={magazineRef}>
                     {magazines.map((magazine) => (
                         <option key={magazine.id}>{magazine.name}</option>
@@ -141,7 +141,7 @@ export default function Application() {
                     {locations.map((location) => (
                         <option key={location.id}>{location.name}</option>
                     ))}
-                </select>
+                </select> */}
 
 
                 <div style={{ height: "24px" }}></div>
