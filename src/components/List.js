@@ -30,7 +30,18 @@ export default function List({ user, tab }) {
     }
 
     async function deleteRow(id) {
-        const { error } = await supabase.from("Rows").update({ isDeleted: true }).eq("id", id);
+        // const { error } = await supabase.from("Rows").update({ isDeleted: true }).eq("id", id);
+
+        // Delete the record from Supabase
+        
+        const { data, error } = await supabase
+            .from("Rows")
+            .delete()
+            .eq("id", id);
+            
+            
+        
+
         getRows();
     }
 
